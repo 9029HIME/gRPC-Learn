@@ -1,0 +1,12 @@
+syntax = "proto3";
+//注意这个坑！！！！一定要指定go文件的包名，且前面要带/
+option go_package = "/ProtoEntity";
+
+message CPU{
+//  记得！这个1代表属性的序号，代表值
+  string brand = 1;
+  string name = 2;
+//  属性的命名用下划线
+  uint32 number_cores = 3;
+}
+

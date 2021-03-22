@@ -1,6 +1,6 @@
 package pendingTest
 
-import "gRPC-Learn/zero01/ProtoEntity"
+import "gRPC-Learn/01/ProtoEntity"
 
 func main() {
 

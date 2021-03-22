@@ -2,8 +2,8 @@ package UnitTest
 
 import (
 	"fmt"
-	"gRPC-Learn/zero01/ProtoEntity"
-	"gRPC-Learn/zero01/pendingTest"
+	"gRPC-Learn/01/ProtoEntity"
+	"gRPC-Learn/01/pendingTest"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"io/ioutil"
@@ -17,7 +17,7 @@ protobuf：24KB
 json：51KB
 */
 func TestMarshal(t *testing.T) {
-	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\zero01\\tempFile\\marshal.bin"
+	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\01\\tempFile\\marshal.bin"
 	people := pendingTest.NewPeople("黄老师")
 	data, err := proto.Marshal(people)
 	if err != nil {
@@ -30,7 +30,7 @@ func TestMarshal(t *testing.T) {
 }
 
 func TestUnMarshal(t *testing.T) {
-	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\zero01\\tempFile\\marshal.bin"
+	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\01\\tempFile\\marshal.bin"
 	data, err := ioutil.ReadFile(file)
 	if err != nil {
 		panic(err)
@@ -44,7 +44,7 @@ func TestUnMarshal(t *testing.T) {
 }
 
 func TestJsonMarshal(t *testing.T) {
-	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\zero01\\tempFile\\people.json"
+	file := "C:\\WorkPlace\\Golang\\FreePlace\\gRPC-Learn\\01\\tempFile\\people.json"
 	people := pendingTest.NewPeople("黄老师")
 	marshaler := jsonpb.Marshaler{}
 	json, err := marshaler.MarshalToString(people)

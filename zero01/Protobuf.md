@@ -25,7 +25,7 @@
 ```protobuf
 syntax = "proto3";
 //注意这个坑！！！！一定要指定生成的go文件的包名，且前面要带/
-option go_package = "/main";
+option go_package = "/pendingTest";
 
 message CPU{
 //  记得！这个1代表属性的序号，代表值

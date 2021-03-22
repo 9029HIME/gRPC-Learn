@@ -10,6 +10,8 @@ message Teacher{
     ENGLISH = 2;
   }
   string name = 1;
+  //type_name的类型为上面定义的枚举type
+  type type_name = 2;
 }
 
 message Student{

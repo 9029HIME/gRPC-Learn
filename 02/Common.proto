@@ -1,0 +1,24 @@
+syntax = "proto3";
+option go_package = "/ProtoEntity";
+import "google/protobuf/any.proto";
+
+message Request{
+  int64 page_no = 1;
+  int64 page_size = 2;
+  google.protobuf.Any payload = 3;
+}
+
+message Response{
+  string status = 1;
+  int32 code = 2;
+  google.protobuf.Any payload = 3;
+}
+
+message ResponsePayload{
+  string json_content = 1;
+}
+
+service CommonService{
+  rpc testRequest(Request) returns (Response){};
+}
+

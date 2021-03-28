@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "/ProtoEntity";
+
+//简单模拟一下用户查询操作
+service UserService{
+  rpc getUserInfo(Request) returns (Response){}
+  rpc getUserInfoStream(stream Request) returns (stream Response){}
+}
+
+message Request{
+  string payload = 1;
+}
+
+message Response{
+  string payload = 1;
+}

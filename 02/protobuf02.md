@@ -35,13 +35,15 @@ service CommonService{
 
 ​	每一个Protobuf编译形成的结构体都会实现function ProtoReflect() protoreflect.Message方法，这是proto.Message的标志。**那么如果我有一个不是protobuf编译形成的任意结构体实现了proto.Message，将他转成Any可行吗？这个有待考究。**
 
-     foo := &pb.Foo{...}
-     any, err := anypb.New(foo)
-     if err != nil {
-       ...
-     }
-     ...
-     foo := &pb.Foo{}
-     if err := any.UnmarshalTo(foo); err != nil {
-       ...
-     }
+```go
+ foo := &pb.Foo{...}
+ any, err := anypb.New(foo)
+ if err != nil {
+   ...
+ }
+ ...
+ foo := &pb.Foo{}
+ if err := any.UnmarshalTo(foo); err != nil {
+   ...
+ }
+```
